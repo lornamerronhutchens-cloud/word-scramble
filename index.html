@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word Scramble</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Word Scramble</h1>
+
+    <div class="difficulty-row">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy (4–5 letters, 30s)</option>
+        <option value="medium" selected>Medium (6–7 letters, 20s)</option>
+        <option value="hard">Hard (8+ letters, 15s)</option>
+      </select>
+    </div>
+
+    <div class="scoreboard">
+      <span>Score: <strong id="score">0</strong></span>
+      <span>Best: <strong id="best">0</strong></span>
+      <span>Streak: <strong id="streak">0</strong></span>
+    </div>
+
+    <div class="card" id="game-card">
+      <div class="timer-bar-wrap">
+        <div class="timer-bar" id="timer-bar"></div>
+      </div>
+      <div class="scrambled" id="scrambled-word">— — — — —</div>
+      <div class="hint" id="hint-text"></div>
+      <div class="input-row">
+        <input
+          type="text"
+          id="answer-input"
+          placeholder="Your answer…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="submit-btn">Go</button>
+      </div>
+      <div class="feedback" id="feedback"></div>
+      <div class="action-row">
+        <button id="hint-btn" class="secondary">Hint</button>
+        <button id="skip-btn" class="secondary">Skip</button>
+      </div>
+    </div>
+
+    <button id="start-btn" class="big-btn">Start Game</button>
+
+    <div class="history" id="history"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
